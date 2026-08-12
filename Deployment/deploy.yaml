@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: guestbook-ui
+  name: dotnetcoresample
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: guestbook-ui
+      app: dotnetcore
   template:
     metadata:
       labels:
