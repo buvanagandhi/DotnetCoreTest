@@ -1,31 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dotnetcoresample
+  name: DotnetCoreTest
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: dotnetcore
+      app: DotnetCoreTest
   template:
     metadata:
       labels:
-        app: guestbook-ui
+        app: DotnetCoreTest
     spec:
       containers:
-      - name: guestbook-ui
-        image: <+artifact.image>
+      - name: dockerbuvana123/my-dotnet-app
+        image: testimage
         ports:
         - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: guestbook-ui
+  name: dotnetcoretest
 spec:
   type: LoadBalancer
   selector:
-    app: guestbook-ui
+    app: dotnetcoretest
   ports:
     - protocol: TCP
       port: 80
